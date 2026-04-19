@@ -1,0 +1,26 @@
+name = "cloud-mail-brevo-feishu"
+main = "src/index.js"
+compatibility_date = "2025-06-04"
+keep_vars = true
+
+[observability]
+enabled = true
+
+# 静态资源配置
+# 前端项目打包后放在 dist 目录
+[assets]
+binding = "assets"
+directory = "./dist"
+not_found_handling = "single-page-application"
+run_worker_first = true
+
+# 构建配置
+# Cloudflare Pages 自动部署时会执行此命令构建前端
+[build]
+command = "cd ../mail-vue && pnpm install && pnpm run build"
+cwd = "."
+
+# 定时任务配置
+# 每天晚上 12 点 (UTC 16:00) 执行
+[triggers]
+crons = ["0 16 * * *"]
