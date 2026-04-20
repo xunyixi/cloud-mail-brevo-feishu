@@ -6,6 +6,11 @@ keep_vars = true
 [observability]
 enabled = true
 
+# R2 对象存储绑定
+[[r2_buckets]]
+binding = "r2"
+bucket_name = "youjian"
+
 # 静态资源配置
 # 前端项目打包后放在 dist 目录
 [assets]
