@@ -6,7 +6,12 @@ keep_vars = true
 [observability]
 enabled = true
 
-# R2 对象存储绑定
+# KV 数据库绑定（用于配置信息）
+[[kv_namespaces]]
+binding = "kv"
+id = "a75aaf85e62f4cc199f9ac6e83db5678"
+
+# R2 对象存储绑定（用于附件）
 [[r2_buckets]]
 binding = "r2"
 bucket_name = "youjian"
